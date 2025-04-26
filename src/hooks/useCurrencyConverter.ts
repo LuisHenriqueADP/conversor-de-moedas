@@ -18,7 +18,7 @@ export const useCurrencyConverter = (
   const [error, setError] = useState<string | null>(null);
   const [rates, setRates] = useState<ExchangeRateData | null>(null);
 
-  // Fetch rates whenever the fromCurrency changes
+
   useEffect(() => {
     const fetchRates = async () => {
       if (!fromCurrency) return;
@@ -40,7 +40,7 @@ export const useCurrencyConverter = (
     fetchRates();
   }, [fromCurrency]);
 
-  // Perform conversion when amount, fromCurrency, toCurrency, or rates change
+
   useEffect(() => {
     const convert = async () => {
       if (!amount || !fromCurrency || !toCurrency || !rates) {
